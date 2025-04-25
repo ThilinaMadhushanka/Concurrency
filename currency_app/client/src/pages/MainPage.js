@@ -48,16 +48,16 @@ export default function MainPage() {
     }, []);
 
     return (
-        <div>
+        <div className='p-2'>
             <h1 className="lg:mx-32 text-5xl font-bold text-green-500">Convert Your Currencies Today</h1>
-            <p className="lg:mx-32 opacity-40 p-6">
+            <p className="lg:mx-32 opacity-40 p-5">
                 Welcome to "Convert Your Currencies Today"! This application allows you to easily convert currencies based on the latest exchange rates.
             </p>
-            <div className="mt-5 flex flex-col items-center justify-center">
+            <div className="mt-5 flex flex-col items-center justify-center p-4">
                 <section className="w-full lg:w-1/2">
                     <form onSubmit={handleSubmit} className="bg-gray-100 dark:bg-gray-800 shadow-md rounded-lg p-6">
                         <div className="mb-4">
-                            <label htmlFor="date" className="block mb-2 text-sm font-medium text-gray-100 dark:text-white">Date</label>
+                            <label htmlFor="date" className="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Date</label>
                             <input 
                                 onChange={(e) => setDate(e.target.value)}
                                 type="date" 
@@ -68,7 +68,7 @@ export default function MainPage() {
                             />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="sourceCurrency" className="block mb-2 text-sm font-medium text-gray-100 dark:text-white">Source Currency</label>
+                            <label htmlFor="sourceCurrency" className="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Source Currency</label>
                             <select 
                                 onChange={(e) => setSourceCurrency(e.target.value)}
                                 id="sourceCurrency" 
@@ -84,7 +84,7 @@ export default function MainPage() {
                             </select>
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="targetCurrency" className="block mb-2 text-sm font-medium text-gray-100 dark:text-white">Target Currency</label>
+                            <label htmlFor="targetCurrency" className="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Target Currency</label>
                             <select 
                                 onChange={(e) => setTargetCurrency(e.target.value)}
                                 id="targetCurrency" 
@@ -100,7 +100,7 @@ export default function MainPage() {
                             </select>
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="amountInSourceCurrency" className="block mb-2 text-sm font-medium text-gray-100 dark:text-white">Amount in Source Currency</label>
+                            <label htmlFor="amountInSourceCurrency" className="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Amount in Source Currency</label>
                             <input 
                                 onChange={(e) => setAmountInSourceCurrency(e.target.value)}
                                 type="number" 
@@ -119,7 +119,10 @@ export default function MainPage() {
                     </form>
                 </section>
             </div>
+            <section className='bg-gray-700 shadow-md rounded-lg items-center flex justify-center p-1'>
             <h2 className="text-xl font-bold mt-4">Converted Amount: {amountInTargetCurrency}</h2>
+            </section>
+            
             
         </div>
     );
